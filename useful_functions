@@ -1,0 +1,8 @@
+using ull=unsigned long long int;
+ull power(int n,int p)
+{
+  ull ans=1;
+  while(p--)
+  ans*=n;
+  return ans;
+}
