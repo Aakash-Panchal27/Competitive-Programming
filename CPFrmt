@@ -9,3 +9,16 @@
 using LL=long long int;
 using ULL=unsigned long long int;
 using LD=long double;
+using namespace std;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+  	cin.tie(0);
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+	}
+	return 0;
+}
