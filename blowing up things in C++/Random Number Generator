@@ -1,0 +1,6 @@
+std::random_device akp;
+std::mt19937 rng(akp());
+
+//std::m19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+cout<<rng()<<endl;
