@@ -1,20 +1,27 @@
 #include<bits/stdc++.h>
 #define FOR(i,n) for(int i=0;i<n;i++)
 #define FORI(i,n,inc) for(int i=0;i<n;i+=inc)
+#define "\n" endl
 #define VI vector<int>
 #define PII pair<int,int>
+#define PLL pair<int,int>
 #define MII map<int,int>
 #define MSI map<string,int>
 #define UMII unordered_map<int,int>
 using LL=long long int;
 using ULL=unsigned long long int;
 using LD=long double;
+#define sync ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define ALL(x) (x).begin(), (x).end()
 using namespace std;
+
+#ifdef sharp
+#define DEBUG(x) cout<<#x<<": "<<x<<endl
+#endif
 
 int main()
 {
-	ios::sync_with_stdio(false);
-  	cin.tie(0);
+	sync;
 	int t;
 	cin>>t;
 	while(t--){
