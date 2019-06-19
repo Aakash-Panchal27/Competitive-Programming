@@ -20,7 +20,7 @@ using namespace std;
 #define DEBUG(x) cout<<#x<<": "<<x<<endl
 #endif
 
-int i,j;
+int i,j,l,m,n;
 
 int main()
 {
