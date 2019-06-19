@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-#define FOR(i,n) for(int i=0;i<n;i++)
-#define FORI(i,n,inc) for(int i=0;i<n;i+=inc)
+#define FOR(i,n) for(i=0;i<n;i++)
+#define FORI(i,n,inc) for(i=0;i<n;i+=inc)
 std::string ap="\n";
 #define ap endl
 #define VI vector<int>
