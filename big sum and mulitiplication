@@ -1,0 +1,88 @@
+
+std::string stringsum(std::string a,std::string b)
+{
+  std::string sum="";
+  if(a.size()==0)return b;if(b.size()==0)return a;
+  int asize=a.size(),bsize=b.size(),as=0,bs=0,carry=0,immediate_sum=0;
+  //Equals the size
+  if(asize!=bsize){
+    if(asize>bsize)
+    {
+      while(b.size()!=a.size())
+      {
+        b="0"+b;
+      }
+    }
+    if(asize<bsize)
+    {
+      while(b.size()!=a.size())
+      {
+        a="0"+a;
+      }
+    }
+  }
+  //finds the answer string
+  //std::cout<<a<<std::endl<<b<<std::endl;
+  for(int i=a.size()-1;i>=0;i--)
+  {
+      as=a[i]-'0';
+      bs=b[i]-'0';
+      immediate_sum=as+bs+carry;
+      //std::cout<<as<<" "<<bs<<" "<<immediate_sum<<std::endl;
+      sum=char(immediate_sum%10+'0')+sum;
+      carry=immediate_sum/10;
+  }
+  //adds remaining carray to the answer
+  while(carry)
+  {
+    sum=static_cast<char>(carry%10+'0')+sum;
+    carry/=10;
+  }
+  return sum;
+}
+
+string string_multiplicatino_with_number(string a,int num)
+{
+  if(a.size()==0)return std::to_string(num);
+  string ans="";
+  int as{0},bs{0},multi=1,carry=0;
+  for(int i=a.size()-1;i>=0;i--)
+  {
+    as=int(a[i]-'0');
+    multi=as*num+carry;
+    ans=char((multi%10)+'0')+ans;
+    carry=multi/10;
+  }
+  while(carry)
+  {
+    ans=char(carry%10+'0')+ans;
+    carry/=10;
+  }
+  return ans;
+}
+
+void swap(string &a,string &b)
+{
+  string c=a;
+  a=b;
+  b=c;
+}
+
+string stringmultiplication(string a,string b)
+{
+  if(a.size()>b.size())swap(a,b);
+  string ans,multiplication="",elements="";
+  int appendzeros=0;
+  for(int i=0;i<b.size();i++)
+  {
+    elements=string_multiplicatino_with_number(a,int(b[i]-'0'));
+    appendzeros=b.size()-1-i;
+    while(appendzeros)
+    {
+      elements.append("0");
+      appendzeros--;
+    }
+    ans=stringsum(elements,ans);
+  }
+  return ans;
+}
