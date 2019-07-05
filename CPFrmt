@@ -40,6 +40,11 @@ int i,j,l,m,n;
 int main()
 {
 	sync;
-	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		
+	}
 	return 0;
 }
