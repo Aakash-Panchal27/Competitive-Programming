@@ -1,14 +1,17 @@
-#include"pch.h"
 #include<iostream>
 #include<string>
 #include<vector>
 #include<ctime>
 #include<iomanip>
+#include<fstream>
 #include<stack>
 #include<queue>
+#include<cassert>
+#include<algorithm>
 #include<unordered_map>
 #include<map>
 #include<functional>
+#include<exception>
 #include<utility>
 #define fori(i,z,u) for(i=z;i<u;i++)
 #define forz(i,m) for(i=0;i<m;i++)
@@ -29,12 +32,20 @@ using ld = long double;
 using ull = unsigned long long;
 #define pii pair<int,int>
 #define pll pair<ll,ll>
-
+#define Onlaptop
 
 int main()
 {
 	int i{ 0 }, j{ 0 }, k{ 0 }, l{ 0 }, a{ 0 }, b{ 0 }, c{ 0 }, d{ 0 }, t{ 0 }, n{ 0 };
-	
 
+	#ifdef Onlaptop
+		fstream cin,cout;
+	
+		cin.open("input.txt");
+		cout.open("output.txt",ios::trunc);
+	#endif
+	
+	
+	
 	return 0;
 }
