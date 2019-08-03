@@ -1,50 +1,83 @@
-#include<bits/stdc++.h>
-#define FOR(i,n) for(i=0;i<n;i++)
-#define FORI(i,n,inc) for(i=0;i<n;i+=inc)
-std::string ap="\n";
-#define ap endl
-#define VI vector<int>
-#define PII pair<int,int>
-#define PLL pair<int,int>
-#define MII map<int,int>
-#define MSI map<string,int>
-#define UMII unordered_map<int,int>
-using LL=long long int;
-using ULL=unsigned long long int;
-using LD=long double;
-#define sync ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
-#define ALL(x) (x).begin(), (x).end()
+#include"pch.h"
+#include<iostream>
+#include<string>
+#include<vector>
+#include<ctime>
+#include<iomanip>
+#include<stack>
+#include<queue>
+#include<unordered_map>
+#include<map>
+#include<functional>
+#include<utility>
+#define fori(i,z,u) for(i=z;i<u;i++)
+#define forz(i,m) for(i=0;i<m;i++)
+#define forinc(i,z,u,inc) for(i=z;i<u;i+=inc)
 using namespace std;
-struct custom_hash {
-    static uint64_t splitmix64(uint64_t x) {
-        // http://xorshift.di.unimi.it/splitmix64.c
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
+#define fi first
+#define se second
+#define vi vector<int>
+#define vill vector<long long>
+#define vd vector<long double>
+#define vvi vector<vector<int>>
+#define vs vector<string>
+#define vb vector<bool>
+#define ump unordered_map
+#define debug(x) cout<<#x<<" : "<<x
+using ll = long long;
+using ld = long double;
+using ull = unsigned long long;
+#define pii pair<int,int>
+#define pll pair<ll,ll>
 
-    size_t operator()(uint64_t x) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(x + FIXED_RANDOM);
-    }
-};
-
-
-#ifdef sharp
-#define DEBUG(x) cout<<#x<<": "<<x<<endl
-#endif
-
-int i,j,l,m,n;
+bool least(vi&one, vi&two)
+{
+	if (one[2] <= two[2])return true;
+	return false;
+}
 
 int main()
 {
-	sync;
-	int t;
-	cin>>t;
-	while(t--)
+	int i{ 0 }, j{ 0 }, k{ 0 }, l{ 0 }, a{ 0 }, b{ 0 }, c{ 0 }, d{ 0 }, t{ 0 }, n{ 0 };
+	vvi app;
+
+	cin >> t;
+
+	forz(i, t)cin >> c;
+
+	vb isdone(t + 1);
+
+	cin >> n;
+
+	app.assign(n, vi(3));
+
+	forz(i, n)forz(j, 3)cin >> app[i][j];
+
+	sort(app.begin(), app.end(), least);
+
+	ll cost = 0;
+
+	forz(i, n)
 	{
-		
+		if (isdone[app[i][1]])
+			continue;
+
+		isdone[app[i][1]] = true;
+		cost += app[i][2];
 	}
+
+	b = 1;
+	fori(i, b, t + 1)
+		if (isdone[i])a++;
+
+	if (a < t - 1)
+	{
+		cout << -1; return 0;
+	}
+
+	cout << cost;
+
+	getchar();
+
 	return 0;
 }
