@@ -20,3 +20,4 @@ int readInt () {
 		return -result;
 	else
 		return result;
+}
